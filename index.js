@@ -15,20 +15,7 @@ app.get('/', (req, res) => {
     res.send(`<h1>Hello from node API</h1>`);
 })
 
-//GET
-
-
-//POST
-
-
-
-//Update a product
-
-
-
-//Deleting a product
-
-
+//connecting to mongoose
 mongoose.connect('mongodb+srv://test:test@backenddb.d5zjl.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDB')
     .then(() => {
         console.log("Connected to MongoDB")

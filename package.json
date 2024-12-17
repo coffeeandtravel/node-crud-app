@@ -15,5 +15,8 @@
     "express": "^4.21.2",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.0"
+  },
+  "devDependencies": {
+    "web-vitals": "^4.2.4"
   }
 }
