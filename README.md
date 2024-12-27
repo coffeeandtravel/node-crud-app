@@ -104,22 +104,38 @@ This file defines the **Product** model using Mongoose. Mongoose is an Object Da
 ```js
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  price: { type: Number, required: true },
-  description: { type: String, required: true },
-  category: { type: String, required: true },
-});
+const productSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, "Please enter product name"]
+    },
+    quantity: {
+        type: Number,
+        required: [true, "Please enter product quantity"],
+        default: 0
+    },
+    price: {
+        type: Number,
+        required: [true, "Please enter product price"]
+    },
+    image: {
+        type: String,
+        required: [false, "Pleae enter product image"]
+    }
+},
+    {
+        timestamps: true
+    })
 
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;
 ```
 
-- **name**: The name of the product.
-- **price**: The price of the product.
-- **description**: A brief description of the product.
-- **category**: The category the product belongs to.
+- **name**: The name of the product (required).
+- **quantity**: The quantity of the product (default: 0).
+- **price**: The price of the product (required).
+- **image**: The image URL of the product (optional).
 
 ### 4. **controllers/product.controllers.js**
 This file contains the controller functions for handling the logic of each CRUD operation. The controller functions interact with the **Product** model and return responses.
