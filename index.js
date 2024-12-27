@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 
 //connecting to mongoose
-mongoose.connect('mongodb+srv://test:test@backenddb.d5zjl.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDB')
+mongoose.connect('mongodb+srv://<user>:<password>@backenddb.d5zjl.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDB')
     .then(() => {
         console.log("Connected to MongoDB")
         app.listen(3000, () => {
